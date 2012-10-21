@@ -1,0 +1,16 @@
+[
+    {
+        "repository": "CyanogenMod/android_kernel_samsung_t1",
+        "target_path": "kernel/samsung/t1"
+        "branch": "jellybean"
+    },
+    {
+        "repository": "android_packages_apps_SamsungServiceMode",
+        "target_path": "packages/apps/SamsungServiceMode"
+    },
+    {
+        "repository": "TheMuppets/proprietary_vendor_samsung",
+        "target_path": "vendor/samsung",
+	"branch": "jellybean"
+    }
+]

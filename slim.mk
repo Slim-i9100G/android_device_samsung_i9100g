@@ -15,20 +15,31 @@
 #
 
 ## Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/gsm.mk)
+$(call inherit-product, vendor/slim/config/gsm.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := GT-I9100G
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/i9100g/full_i9100g.mk)
 
+# Inherit device settings
+$(call inherit-product, vendor/slim/config/common_sgs.mk)
+
+#Boot Animation
+PRODUCT_COPY_FILES +=  \
+    vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
+
+#copy 00check
+PRODUCT_COPY_FILES += \
+	vendor/slim/prebuilt/common/etc/init.d/00check:system/etc/init.d/00check
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := i9100g
-PRODUCT_NAME := cm_i9100g
+PRODUCT_NAME := slim_i9100g
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := GT-I9100G
 PRODUCT_MANUFACTURER := samsung
